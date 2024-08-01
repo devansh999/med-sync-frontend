@@ -1,16 +1,19 @@
 import React from 'react';
-import RegisterUser from './RegisterUser';
-import GetUser from './GetUser';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import RegisterUser from './components/RegisterUser';
+import GetUser from './components/GetUser';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Meddx Registration</h1>
-      </header>
-      <RegisterUser />
-      <GetUser />
+    <div className='overflow-hidden'>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<RegisterUser />} />
+        <Route path='/view-records' element={<GetUser />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
