@@ -11,7 +11,6 @@ const Navbar = () => {
         <div className="flex space-x-10">
           <Link to="/" className="flex gap-2 text-2xl font-bold items-center sm:flex">
             <img className='w-20' alt='logo' src={logo} />
-            <span>MED-SYNC</span>
           </Link>
           <ul className="hidden items-center md:flex text-lg tracking-widest">
             <li>
