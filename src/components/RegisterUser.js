@@ -1,12 +1,14 @@
-// src/components/RegisterUser.js
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import MeddxContract from '../artifacts/contracts/MeddxContract.sol/MeddxContract.json';
 
 const contractAddress = '0xeb1b7c3aa28239a541461484263636f3346eb636';
 
 function RegisterUser() {
+  useEffect(() => {
+    console.log('RegisterUser component rendered');
+  }, []);
+
   const [form, setForm] = useState({
     name: '',
     phoneNumber: '',
