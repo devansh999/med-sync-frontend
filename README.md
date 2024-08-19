@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Decentralized Management of Patient Health Records Using Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project implements a decentralized system for managing patient health records using blockchain technology, IPFS (InterPlanetary File System), and layer-2 scaling solutions like Optimism. The system is designed to provide secure, transparent, and patient-controlled health data management, reducing costs and complexity while ensuring data integrity and privacy.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- **Decentralized Architecture:** Utilizes Ethereum wallets for both patients and doctors to store and manage health records on the blockchain.
+- **IPFS Integration:** Non-critical patient data is updated and accessed through IPFS during hospital stays, reducing the need for continuous blockchain transactions.
+- **Optimism for Cost Efficiency:** A layer-2 solution is employed to minimize the cost and increase the efficiency of blockchain interactions.
+- **User-Friendly Interface:** Provides an intuitive interface for generating and managing Ethereum wallets, with private keys securely stored on the user's device.
+- **Decentralized Identity (DID) with Biometric Authentication:** DID technology is used for managing patient authentication and private key recovery through biometric data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## System Components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Patient Wallets:** Ethereum wallets for storing health records. The private keys are securely stored on the patient's device.
+- **Doctor Wallets:** Ethereum wallets used by doctors to upload data to patient wallets during discharge. The private keys are stored on the doctor’s device.
+- **IPFS for Data Handling:** All health data during the patient's hospital stay is handled through IPFS, ensuring cost-effective and efficient data management.
+- **Optimism Layer-2:** Employed to reduce costs and optimize blockchain transactions.
 
-### `npm test`
+## Data Flow
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Patient Admission:** 
+   - An Ethereum wallet is generated for the patient and linked to their profile.
+   - The private key is securely stored on the patient’s device.
 
-### `npm run build`
+2. **Hospital Stay:** 
+   - Patient data is updated and accessed through IPFS, minimizing the need for blockchain transactions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Patient Discharge:** 
+   - Doctors sign a transaction from their wallet to the patient’s wallet on the blockchain via Optimism, finalizing patient records.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Revisiting Patient:** 
+   - New admission data is appended to the existing wallet, providing future doctors with access to the complete patient history.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Advantages
 
-### `npm run eject`
+- **Cost-Effective:** By leveraging IPFS and Optimism, the system minimizes costs and reduces the complexity of blockchain interactions.
+- **Scalable:** The use of layer-2 solutions like Optimism ensures that the system can scale efficiently to accommodate a growing number of users.
+- **Secure and Private:** Health data is securely stored on the blockchain, with access controlled by smart contracts and DID technology.
+- **Fully Decentralized:** Both patients and doctors have full control over their data, with private keys securely stored on their devices.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/patient-health-records-blockchain.git
+   cd patient-health-records-blockchain
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Set up environment variables for Ethereum and IPFS configuration in a `.env` file:
+   ```bash
+   cp .env.example .env
+   # Update the .env file with your configuration
+   ```
 
-## Learn More
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Patient:** Create and manage your Ethereum wallet for storing health records.
+- **Doctor:** Authenticate and manage patient records using your Ethereum wallet.
+- **Hospital Administrator:** Manage user accounts and oversee access to patient records.
+- **Diagnostic Center:** Upload test results directly to the patient’s blockchain wallet.
+- **Insurance Company:** Access specific insurance claim documents via IPFS.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We welcome contributions! Please fork the repository and submit a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-### Making a Progressive Web App
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For questions or suggestions, please contact the project maintainers at [devanshguddeti9@gmail.com](mailto:devanshguddeti9@gmail.com).
